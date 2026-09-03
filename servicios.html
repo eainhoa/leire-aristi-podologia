@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Leire Aristi Podología</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta Nigan: Rosa cálido / Beige / Terracota */
+            --primary: #c48b7f;
+            --primary-dark: #a66e63;
+            --primary-light: #f5ebe6;
+            --bg-light: #faf8f5;
+            --text-main: #332d2b;
+            --text-muted: #786e6a;
+            --white: #ffffff;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 0.2rem 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s !important;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Page Banner */
+        .page-header {
+            background-color: var(--primary-light);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            border: 1px solid #f0e6e2;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(196, 139, 127, 0.12);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            border-top: 1px solid var(--primary-light);
+            padding-top: 1rem;
+        }
+
+        .service-list li {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Banner CTA */
+        .cta-banner {
+            max-width: 1200px;
+            margin: 0 auto 5rem auto;
+            background-color: var(--primary-light);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2523;
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #423936;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 1.5rem auto 0 auto;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #a39894;
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 1.5rem;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+                gap: 1.2rem;
+                border-bottom: 2px solid var(--primary-light);
+            }
+
+            nav ul.nav-active {
+                display: flex;
+            }
+
+            .btn-cta {
+                width: 100%;
+            }
+
+            .page-header {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .services-container {
+                padding: 3rem 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-banner {
+                margin: 0 1.5rem 3rem 1.5rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Leire Aristi <span>| Podología</span></a>
+            
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú de navegación">
+                ☰
+            </button>
+
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-mi.html">Sobre mí</a></li>
+                    <li><a href="servicios.html" class="active">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="cita.html" class="btn-cta">Pedir Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Encabezado -->
+    <section class="page-header">
+        <h1>Servicios Podológicos</h1>
+        <p>Tratamientos especializados para el cuidado y tratamiento de tus pies en Zarautz</p>
+    </section>
+
+    <!-- Grid de Servicios -->
+    <section class="services-container">
+        <div class="services-grid">
+            
+            <!-- Servicio 1 -->
+            <div class="service-card">
+                <div class="service-icon">01</div>
+                <h2>Quiropodología</h2>
+                <p>Tratamiento directo e higiénico para la eliminación de molestias del pie y la prevención de complicaciones futuras.</p>
+                <ul class="service-list">
+                    <li>Eliminación de durezas y callosidades (helomas)</li>
+                    <li>Corte y fresado correcto de uñas</li>
+                    <li>Tratamiento de uñas encarnadas (onicocriptosis)</li>
+                    <li>Tratamiento de hongos en las uñas (onicomicosis)</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="service-card">
+                <div class="service-icon">02</div>
+                <h2>Estudio de la Pisada</h2>
+                <p>Análisis de la marcha tanto en estático como en dinámico para diagnosticar alteraciones estructurales y mejorar tu biomecánica.</p>
+                <ul class="service-list">
+                    <li>Evaluación postural y de ejes corporales</li>
+                    <li>Exploración articular y muscular</li>
+                    <li>Análisis del impacto en la marcha o carrera</li>
+                    <li>Prevención de sobrecargas e inflamaciones</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="service-card">
+                <div class="service-icon">03</div>
+                <h2>Plantillas Personalizadas</h2>
+                <p>Diseño e integración de soportes plantares a medida para aliviar el dolor, corregir desviaciones o distribuir presiones.</p>
+                <ul class="service-list">
+                    <li>Adaptadas a calzado diario, de trabajo o deportivo</li>
+                    <li>Materiales de alta absorción de impacto</li>
+                    <li>Tratamiento de fascitis plantar, espolón, etc.</li>
+                    <li>Revisiones y adaptaciones periódicas</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="service-card">
+                <div class="service-icon">04</div>
+                <h2>Podología Infantil</h2>
+                <p>Diagnóstico precoz y seguimiento del desarrollo del pie y la marcha en niños para corregir posibles desviaciones a tiempo.</p>
+                <ul class="service-list">
+                    <li>Detección de pies planos o valgos</li>
+                    <li>Valoración del patrón de marcha al caminar</li>
+                    <li>Tratamientos no invasivos y adaptados</li>
+                    <li>Seguimiento del crecimiento articular</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 5 -->
+            <div class="service-card">
+                <div class="service-icon">05</div>
+                <h2>Papilomas y Dermatología</h2>
+                <p>Tratamiento de afecciones cutáneas de la piel del pie mediante protocolos efectivos y seguros.</p>
+                <ul class="service-list">
+                    <li>Tratamiento de verrugas plantares (papilomas)</li>
+                    <li>Hiperhidrosis (sudoración excesiva)</li>
+                    <li>Pie de atleta y dermatomicosis</li>
+                    <li>Cuidado del pie de riesgo y sensible</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 6 -->
+            <div class="service-card">
+                <div class="service-icon">06</div>
+                <h2>Podología Deportiva</h2>
+                <p>Atención focalizada en las exigencias de deportistas para optimizar el rendimiento y acelerar la recuperación de lesiones.</p>
+                <ul class="service-list">
+                    <li>Estudio técnico según la disciplina deportiva</li>
+                    <li>Prevención de ampollas y traumatismos ungueales</li>
+                    <li>Soportes plantares para alto impacto</li>
+                    <li>Optimización de apoyos y eficiencia de pisada</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-banner">
+        <h2>¿No sabes qué tratamiento necesitas?</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pide una cita de consulta inicial para valorar tu caso individualmente.</p>
+        <a href="cita.html" class="btn-cta">Reservar Diagnóstico</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Leire Aristi Podología</h3>
+                <p style="color: #a39894; margin-top: 0.5rem;">Graduada en Podología en Madrid.</p>
+            </div>
+            <div>
+                <h4>Ubicación</h4>
+                <p style="color: #a39894; margin-top: 0.5rem;">
+                    Ubicada en el espacio de <strong>Nigan Fisioterapia</strong><br>
+                    Zarautz, Gipuzkoa
+                </p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p style="color: #a39894; margin-top: 0.5rem;">
+                    Teléfono: 600 000 000<br>
+                    Email: info@leirearistipodologia.com
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Leire Aristi Podología. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('nav-active');
+        });
+    </script>
+
+</body>
+</html>

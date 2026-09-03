@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | Leire Aristi Podología</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta Nigan: Rosa cálido / Beige / Terracota */
+            --primary: #c48b7f;
+            --primary-dark: #a66e63;
+            --primary-light: #f5ebe6;
+            --bg-light: #faf8f5;
+            --text-main: #332d2b;
+            --text-muted: #786e6a;
+            --white: #ffffff;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 0.2rem 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s !important;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Page Banner */
+        .page-header {
+            background-color: var(--primary-light);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background-color: var(--white);
+            border: 2px dashed var(--primary);
+            height: 450px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        /* Values Grid */
+        .values-section {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .value-card {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .value-card h3 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            max-width: 1200px;
+            margin: 4rem auto;
+            background-color: var(--primary-light);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2523;
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #423936;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 1.5rem auto 0 auto;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #a39894;
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 1.5rem;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+                gap: 1.2rem;
+                border-bottom: 2px solid var(--primary-light);
+            }
+
+            nav ul.nav-active {
+                display: flex;
+            }
+
+            .btn-cta {
+                width: 100%;
+            }
+
+            .page-header {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 3rem 1.5rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .values-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .cta-banner {
+                margin: 2rem 1.5rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Leire Aristi <span>| Podología</span></a>
+            
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú de navegación">
+                ☰
+            </button>
+
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-mi.html" class="active">Sobre mí</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="cita.html" class="btn-cta">Pedir Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Encabezado de página -->
+    <section class="page-header">
+        <h1>Conoce a Leire Aristi</h1>
+        <p>Pasión por la podología y el cuidado integral de tus pies</p>
+    </section>
+
+    <!-- Sección Biografía / Presentación -->
+    <section class="about-container">
+        <div class="about-image">
+            [ Foto profesional ]
+        </div>
+        <div class="about-text">
+            <h2>Hola, soy Leire</h2>
+            <p>Tras graduarme en Podología en Madrid y adquirir experiencia en diversas áreas del tratamiento del pie, decidí dar el paso de abrir mi propia consulta en Zarautz.</p>
+            <p>Mi objetivo principal es ofrecer una atención cercana, moderna y fundamentada en la evidencia científica. Entiendo la podología no solo como el tratamiento de patologías puntuales, sino como una disciplina clave para la prevención y la mejora global del movimiento y estilo de vida de cada paciente.</p>
+            <p>Ofrezco mi servicio en un espacio compartido dentro del centro <strong>Nigan Fisioterapia</strong>, un entorno enfocado al bienestar integral donde podré acompañarte en la salud de tu pisada.</p>
+        </div>
+    </section>
+
+    <!-- Valores de la Consulta -->
+    <section class="values-section">
+        <div class="values-container">
+            <h2 style="font-family: var(--font-heading); text-align: center; font-size: 2rem;">Mi Compromiso Contigo</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Formación Continua</h3>
+                    <p>Actualización constante en las últimas técnicas biomecánicas y tratamientos para garantizar la mejor solución a tu caso.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Tratamiento Personalizado</h3>
+                    <p>Cada pie y cada persona son únicos. Adapto cada diagnóstico y plantilla a tus necesidades diarias o deportivas.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Tratamiento Integral</h3>
+                    <p>Trabajo coordinado para tratar el origen del dolor y no solo el síntoma visible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-banner">
+        <h2>¿Tienes dudas o quieres revisar la salud de tus pies?</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Estaré encantada de atenderte en la consulta de Zarautz.</p>
+        <a href="cita.html" class="btn-cta">Solicitar una Valoración</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Leire Aristi Podología</h3>
+                <p style="color: #a39894; margin-top: 0.5rem;">Graduada en Podología en Madrid.</p>
+            </div>
+            <div>
+                <h4>Ubicación</h4>
+                <p style="color: #a39894; margin-top: 0.5rem;">
+                    Ubicada en el espacio de <strong>Nigan Fisioterapia</strong><br>
+                    Zarautz, Gipuzkoa
+                </p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p style="color: #a39894; margin-top: 0.5rem;">
+                    Teléfono: 600 000 000<br>
+                    Email: info@leirearistipodologia.com
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Leire Aristi Podología. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('nav-active');
+        });
+    </script>
+
+</body>
+</html>
