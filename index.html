@@ -36,7 +36,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header & Navigation */
         header {
             background-color: var(--white);
             border-bottom: 1px solid var(--border-color);
@@ -80,7 +79,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
         }
 
@@ -96,6 +95,31 @@
             color: var(--primary-dark);
         }
 
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background-color: var(--white);
+        }
+
+        .lang-selector a {
+            font-size: 0.8rem;
+            padding: 0 0.1rem;
+        }
+
+        .lang-selector .active-lang {
+            color: var(--primary-dark);
+        }
+
+        .lang-divider {
+            color: var(--border-color);
+        }
+
         .nav-phone {
             font-size: 0.85rem;
             font-weight: 500;
@@ -105,7 +129,6 @@
             border-radius: 6px;
         }
 
-        /* Hero Section */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
@@ -132,7 +155,6 @@
             margin-bottom: 1.75rem;
         }
 
-        /* Reserva de Citas */
         .booking-card {
             background-color: var(--white);
             border: 1px solid var(--border-color);
@@ -200,7 +222,6 @@
             background-color: var(--primary-light);
         }
 
-        /* Foto Principal Placeholder */
         .image-placeholder {
             width: 100%;
             height: 380px;
@@ -223,7 +244,6 @@
             color: var(--primary-dark);
         }
 
-        /* Services Preview */
         .services-preview {
             background-color: var(--white);
             padding: 4.5rem 2rem;
@@ -250,29 +270,31 @@
             font-size: 0.95rem;
         }
 
-        .grid-3 {
+        .grid-preview {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
-        .card {
-            padding: 2rem 1.75rem;
+        .card-preview {
+            padding: 1.75rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             background: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
-        .card:hover {
+        .card-preview:hover {
             border-color: var(--primary);
             transform: translateY(-2px);
         }
 
-        /* Títulos de tratamientos en rosa más oscuro */
-        .card h3 {
+        .card-preview h3 {
             font-family: var(--font-heading);
             font-size: 1.15rem;
             font-weight: 600;
@@ -280,13 +302,27 @@
             color: var(--primary-dark);
         }
 
-        .card p {
+        .card-preview p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             line-height: 1.5;
+            margin-bottom: 1.25rem;
         }
 
-        /* Footer */
+        .link-more {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .link-more:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background-color: #231f1e;
             color: var(--white);
@@ -325,7 +361,6 @@
             color: #786e6a;
         }
 
-        /* Mobile Layout */
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             nav ul {
@@ -351,6 +386,7 @@
             .hero-buttons { flex-direction: column; }
             .btn-primary, .btn-secondary { text-align: center; }
             .image-placeholder { height: 260px; }
+            .grid-preview { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; gap: 1.75rem; }
         }
     </style>
@@ -363,11 +399,14 @@
             <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
             <nav>
                 <ul id="nav-list">
-                    <li><a href="index.html" class="active">Inicio</a></li>
                     <li><a href="sobre-mi.html">Sobre mí</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li class="nav-phone">Citas: 628 123 531</li>
+                    <li class="lang-selector">
+                        <span class="active-lang">ES</span>
+                        <span class="lang-divider">|</span>
+                        <a href="eu/index.html">EUS</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -376,7 +415,7 @@
     <section class="hero">
         <div class="hero-text">
             <h1>Cuidado podológico especializado</h1>
-            <p>Diagnóstico, tratamiento y prevención adaptados a las necesidades específicas de tus pies para mejorar tu salud física y calidad de vida.</p>
+            <p>Prevención, diagnóstico y tratamiento adaptados a las necesidades específicas de tus pies para mejorar tu salud física y calidad de vida.</p>
             
             <div class="booking-card">
                 <div class="booking-card-label">Reserva de citas</div>
@@ -397,22 +436,75 @@
 
     <section class="services-preview">
         <div class="section-header">
-            <h2>Tratamientos destacados</h2>
-            <p>Soluciones clínicas enfocadas en la salud integral del pie.</p>
+            <h2>Servicios Podológicos</h2>
+            <p>Tratamientos especializados e integrales para la salud de tus pies.</p>
         </div>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Cirugía Podológica</h3>
-                <p>Intervenciones mínimamente invasivas para resolver de forma definitiva problemas recurrentes de uñas encarnadas y callosidades crónicas.</p>
+        <div class="grid-preview">
+            
+            <div class="card-preview">
+                <div>
+                    <h3>Quiropodia</h3>
+                    <p>Tratamiento podológico para prevenir, diagnosticar y tratar las afecciones más habituales en la piel y las uñas de los pies.</p>
+                </div>
+                <a href="servicios.html#quiropodia" class="link-more">Más información →</a>
             </div>
-            <div class="card">
-                <h3>Estudio de la Pisada</h3>
-                <p>Análisis biomecánico integral de la marcha e integración de plantillas personalizadas para prevenir dolencias articulares y musculares.</p>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Uñas encarnadas</h3>
+                    <p>Tratamiento especializado para aliviar el dolor, curar la infección y prevenir que la uña vuelva a clavarse.</p>
+                </div>
+                <a href="servicios.html#unas-encarnadas" class="link-more">Más información →</a>
             </div>
-            <div class="card">
-                <h3>Quiropodia e Infiltraciones</h3>
-                <p>Atención primaria para el mantenimiento de la piel y uñas, acompañada de procedimientos específicos para el alivio del dolor agudo.</p>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Papilomas</h3>
+                    <p>Tratamientos efectivos adaptados a cada paciente para eliminar el virus de la verruga plantar de forma segura.</p>
+                </div>
+                <a href="servicios.html#papilomas" class="link-more">Más información →</a>
             </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Estudio de la pisada</h3>
+                    <p>Analizamos de forma personalizada cómo apoyas los pies, caminas y corres para detectar posibles alteraciones biomecánicas.</p>
+                </div>
+                <a href="servicios.html#estudio-pisada" class="link-more">Más información →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Podología infantil</h3>
+                    <p>Prevención, valoración y tratamiento de las alteraciones del pie durante la infancia, acompañando su desarrollo saludable.</p>
+                </div>
+                <a href="servicios.html#podologia-infantil" class="link-more">Más información →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Pie diabético</h3>
+                    <p>Cuidado podológico y prevención fundamental mediante revisiones periódicas para detectar alteraciones de forma temprana.</p>
+                </div>
+                <a href="servicios.html#pie-diabetico" class="link-more">Más información →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Infiltraciones</h3>
+                    <p>Terapia localizada para reducir la inflamación y aliviar el dolor en patologías articulares o musculares del pie.</p>
+                </div>
+                <a href="servicios.html#infiltraciones" class="link-more">Más información →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Cirugía podológica</h3>
+                    <p>Soluciones quirúrgicas para resolver de forma definitiva afecciones y molestias dolorosas crónicas con rápida recuperación.</p>
+                </div>
+                <a href="servicios.html#cirugia-podologica" class="link-more">Más información →</a>
+            </div>
+
         </div>
     </section>
 
@@ -427,7 +519,7 @@
             </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
-                <p>Atención telefónica y WhatsApp:<br>628 123 531<br>leireemail @ .com</p>
+                <p>Atención telefónica y WhatsApp:<br>628 123 531<br>leireaepodologia@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">

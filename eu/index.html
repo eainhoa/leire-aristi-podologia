@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigan | Podologia Zarautzen</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c48b7f;
+            --primary-dark: #a66e63;
+            --primary-light: #f7f0ed;
+            --bg-light: #faf8f5;
+            --text-main: #2d2826;
+            --text-muted: #6e6562;
+            --white: #ffffff;
+            --border-color: #eee5e0;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-dark);
+        }
+
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background-color: var(--white);
+        }
+
+        .lang-selector a {
+            font-size: 0.8rem;
+            padding: 0 0.1rem;
+        }
+
+        .lang-selector .active-lang {
+            color: var(--primary-dark);
+        }
+
+        .lang-divider {
+            color: var(--border-color);
+        }
+
+        .nav-phone {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            background-color: var(--primary-light);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4.5rem 2rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-heading);
+            font-size: 2.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+        }
+
+        .booking-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.75rem;
+        }
+
+        .booking-card-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .booking-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .phone-number {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            color: var(--text-main);
+            padding: 0.7rem 1.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 380px;
+            background-color: var(--primary-light);
+            border: 1px dashed var(--primary);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .image-placeholder-title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .services-preview {
+            background-color: var(--white);
+            padding: 4.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .grid-preview {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card-preview {
+            padding: 1.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .card-preview:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .card-preview h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--primary-dark);
+        }
+
+        .card-preview p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+
+        .link-more {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .link-more:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #231f1e;
+            color: var(--white);
+            padding: 3.5rem 2rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #36302e;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            margin-bottom: 0.85rem;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            color: #a39894;
+            font-size: 0.875rem;
+            line-height: 1.55;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 1.75rem auto 0 auto;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #786e6a;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 1.5rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+                gap: 1.25rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+            nav ul.nav-active { display: flex; }
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 2.5rem 1.25rem;
+                gap: 2rem;
+            }
+            .hero-text h1 { font-size: 1.75rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn-primary, .btn-secondary { text-align: center; }
+            .image-placeholder { height: 260px; }
+            .grid-preview { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; gap: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Nigan <span>| Podologia</span></a>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Nabigazioa">☰</button>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="niri-buruz.html">Niri buruz</a></li>
+                    <li><a href="zerbitzuak.html">Zerbitzuak</a></li>
+                    <li><a href="kontaktua.html">Kontaktua</a></li>
+                    <li class="lang-selector">
+                        <a href="../index.html">ES</a>
+                        <span class="lang-divider">|</span>
+                        <span class="active-lang">EUS</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Zaintza podologiko espezializatua</h1>
+            <p>Prebentzioa, diagnostikoa eta tratamendua zure oinen behar espezifikoetara egokituta, zure osasun fisikoa eta bizi-kalitatea hobetzeko.</p>
+            
+            <div class="booking-card">
+                <div class="booking-card-label">Hitzorduak erreserbatzeko</div>
+                <p>Eskatu zure kontsulta WhatsApp bidez, deituz edo mezu bat bidaliz:</p>
+                <div class="phone-number">628 123 531</div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="zerbitzuak.html" class="btn-primary">Ikusi tratamenduak</a>
+                <a href="kontaktua.html" class="btn-secondary">Kokapena eta kontaktua</a>
+            </div>
+        </div>
+
+        <div class="image-placeholder">
+            <div class="image-placeholder-title">Argazki nagusia</div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="section-header">
+            <h2>Zerbitzu Podologikoak</h2>
+            <p>Zure oinen osasunerako tratamendu espezializatuak eta integralak.</p>
+        </div>
+        <div class="grid-preview">
+            
+            <div class="card-preview">
+                <div>
+                    <h3>Kiropodia</h3>
+                    <p>Oineko azalean eta oinetako azazkaletan ohikoenak diren gaitzak prebenitzeko, diagnostikatzeko eta tratatzeko tratamendua.</p>
+                </div>
+                <a href="zerbitzuak.html#kiropodia" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Azazkal haragituak</h3>
+                    <p>Tratamendu espezializatua mina arintzeko, infekzioa sendatzeko eta azazkala berriro ez sartzeko.</p>
+                </div>
+                <a href="zerbitzuak.html#azazkal-haragituak" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Papilomak</h3>
+                    <p>Paziente bakoitzari egokitutako tratamendu eraginkorrak, garatxoaren birusa modu seguruan ezabatzeko.</p>
+                </div>
+                <a href="zerbitzuak.html#papilomak" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Oinkadaren azterketa</h3>
+                    <p>Modu pertsonalizatuan aztertuko dugu nola bermatzen dituzun oinak, ibiltzeko modua eta korrika egiteko forma.</p>
+                </div>
+                <a href="zerbitzuak.html#oinkadaren-azterketa" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Haur-podologia</h3>
+                    <p>Haurtzaroan izan daitezken oineko alterazioen prebentzioaz, balorazioaz eta tratamenduaz arduratzen gara.</p>
+                </div>
+                <a href="zerbitzuak.html#haur-podologia" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Oin diabetikoa</h3>
+                    <p>Zaintza podologikoa eta prebentzioa funtsezkoak dira alterazioak goiz detektatu eta oinak baldintza onetan mantentzeko.</p>
+                </div>
+                <a href="zerbitzuak.html#oin-diabetikoa" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Infiltrazioak</h3>
+                    <p>Terapia lokalizatua, inflamazioa murrizteko eta mina arintzeko oineko artikulazio edo muskuluen patologietan.</p>
+                </div>
+                <a href="zerbitzuak.html#infiltrazioak" class="link-more">Informazio gehiago →</a>
+            </div>
+
+            <div class="card-preview">
+                <div>
+                    <h3>Kirurgia podologikoa</h3>
+                    <p>Afekzio eta molestia mingarri kronikoak behin betiko konpontzeko soluzio kirurgikoak errekuperazio azkarrarekin.</p>
+                </div>
+                <a href="zerbitzuak.html#kirurgia-podologikoa" class="link-more">Informazio gehiago →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Leire Aristi Podologia</h4>
+            </div>
+            <div class="footer-col">
+                <h4>Kokapena</h4>
+                <p>Nigan Fisioterapia Gunea<br>Altzola kalea 5<br>20800 Zarautz, Gipuzkoa</p>
+            </div>
+            <div class="footer-col">
+                <h4>Kontaktua</h4>
+                <p>Telefonoa eta WhatsAppa:<br>628 123 531<br>leireaepodologia@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nigan Podologia. Eskubide guztiak erreserbatuta.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', () => {
+            document.getElementById('nav-list').classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html>
