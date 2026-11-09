@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niri Buruz | Leire Aristi Podologia</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <header>
+      <div class="nav-container">
+          <a href="index.html" class="logo">Nigan <span>| Podologia</span></a>
+        
+          <!-- Enlaces principales del menú en euskera -->
+          <nav>
+              <ul id="nav-list">
+                  <li><a href="niri-buruz.html">Niri buruz</a></li>
+                  <li><a href="zerbitzuak.html">Zerbitzuak</a></li>
+                  <li><a href="kontaktua.html">Kontaktua</a></li>
+              </ul>
+          </nav>
+
+          <!-- Controles derechos (idioma ES/EUS activo + hamburguesa) -->
+          <div class="mobile-right-controls">
+              <div class="lang-selector">
+                  <a href="../sobre-mi.html">ES</a>
+                  <span class="lang-divider">|</span>
+                  <span class="active-lang">EUS</span>
+              </div>
+              
+              <button class="menu-toggle" id="mobile-menu" aria-label="Nabigazioa">☰</button>
+          </div>
+      </div>
+  </header>
+
+    <section class="page-header">
+        <h1>Ezagutu Leire Aristi</h1>
+        <p>Konpromisoa, zorroztasun klinikoa eta arreta espezializatua Zarautzen.</p>
+    </section>
+
+    <section class="about-container">
+        <div class="about-image-container">
+            <img src="../img/fotoprofesional4.jpeg" alt="Leire Aristi - Podóloga" class="about-img">
+        </div>
+        <div class="about-text">
+            <h2>Kaixo, Leire naiz</h2>
+            <p>Madrilen arlo klinikoan prestakuntza akademiko eta ikerketa-ibilbide sendoa izan ondoren, nire jarduera profesionala Zarautzera bideratzea erabaki dut, kalitate handiko eta banakako arreta podologikoa eskainiz.</p>
+            <p>Nire lana diagnostiko zehatz batean eta paziente bakoitzaren bizitza-estilora eta behar espezifikoetara egokitutako tratamendu aurreratuen aplikazioan oinarritzen da.</p>
+           
+            <p><strong>Nire curriculumean, honako hauek:</strong></p>
+            <ul class="cv-list">
+                <li>Podologiako Gradua (Madrilgo Unibertsitate Konplutentsea).</li>
+                <li>Unibertsitateko espezialitatea: biomekanika eta beheko gorputz-adarreko ortopedia (Juan Carlos Erregea Unibertsitatea).</li>
+                <li>Unibertsitateko espezialitatea oineko podologia mediko-kirurgikoan (UCM).</li>
+                <li>Unibertsitateko espezialitatea: oinaren patologian artikulazio barruko infiltrazioa eta infiltrazio intralesionala (UCM).</li>
+                <li>Espezialitatea podopediatria klinikoan.</li>
+            </ul>
+
+            <p>Nigan Fisioterapia espazioaren barruko ingurune espezializatuan dut kontsulta, zaintza integralera eta mugimenduaren osasunera bideratutako kontzeptu batean.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Nigan Podologia</h4>
+            </div>
+            <div class="footer-col">
+                <h4>Kokapena</h4>
+                <p>Nigan Fisioterapia Gunea<br>Altzola kalea 5<br>20800 Zarautz, Gipuzkoa</p>
+            </div>
+            <div class="footer-col">
+                <h4>Kontaktua</h4>
+                <p>Telefonoa eta WhatsAppa:<br>628 123 531<br>leireaepodologia@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nigan Podologia. Eskubide guztiak erreserbatuta.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', () => {
+            document.getElementById('nav-list').classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html>
