@@ -13,23 +13,30 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Nigan <span>| Podología</span></a>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
-            <nav>
-                <ul id="nav-list">
-                    <li><a href="sobre-mi.html" class="active">Sobre mí</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li class="lang-selector">
-                        <span class="active-lang">ES</span>
-                        <span class="lang-divider">|</span>
-                        <a href="eu/niri-buruz.html">EUS</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+       <div class="nav-container">
+           <a href="index.html" class="logo">Nigan <span>| Podología</span></a>
+          
+           <!-- Enlaces principales del menú (solo estos se ocultarán/mostrarán con la hamburguesa) -->
+           <nav>
+               <ul id="nav-list">
+                   <li><a href="sobre-mi.html">Sobre mí</a></li>
+                   <li><a href="servicios.html">Servicios</a></li>
+                   <li><a href="contacto.html">Contacto</a></li>
+               </ul>
+           </nav>
+
+           <!-- Controles derechos para móvil (idioma + hamburguesa siempre visibles fuera) -->
+           <div class="mobile-right-controls">
+               <div class="lang-selector">
+                   <span class="active-lang">ES</span>
+                   <span class="lang-divider">|</span>
+                   <a href="eu/niri-buruz.html">EUS</a>
+               </div>
+               
+               <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
+           </div>
+       </div>
+   </header>
 
     <section class="page-header">
         <h1>Conoce a Leire Aristi</h1>
@@ -38,12 +45,12 @@
 
     <section class="about-container">
         <div class="about-image-container">
-            <img src="img/fotoprofesional2.jpeg" alt="Leire Aristi - Podóloga" class="about-img">
+            <img src="img/fotoprofesional3.jpeg" alt="Leire Aristi - Podóloga" class="about-img">
         </div>
         <div class="about-text">
             <h2>Hola, soy Leire</h2>
             <p>Tras una sólida trayectoria de especialización académica e investigación en el ámbito clínico en Madrid, decidí enfocar mi actividad profesional en Zarautz, ofreciendo una atención podológica de alta calidad e individualizada.</p>
-            <p>Mi enfoque se fundamenta en un diagnóstico preciso y en la aplicación de tratamientos avanzados adaptados al estilo de vida y necesidades específicas de cada paciente, abarcando desde la biomecánica avanzada hasta la intervención quirúrgica.</p>
+            <p>Mi enfoque se fundamenta en un diagnóstico preciso y en la aplicación de tratamientos avanzados adaptados al estilo de vida y necesidades específicas de cada paciente.</p>
             
             <p><strong>Mi curriculum incluye:</strong></p>
             <ul class="cv-list">
@@ -51,7 +58,7 @@
                 <li>Especialidad universitaria en biomecánica y ortopedia de la extremidad inferior (Universidad Rey Juan Carlos).</li>
                 <li>Especialidad universitaria en podología médico-quirúrgica del pie (UCM).</li>
                 <li>Especialidad universitaria en infiltración intraarticular e intralesional en patología del pie (UCM).</li>
-                <li>Especialidad en podopediatria clínica (Fixtoe Academy).</li>
+                <li>Especialidad en podopediatria clínica.</li>
             </ul>
 
             <p>Paso consulta en un entorno especializado dentro del espacio Nigan Fisioterapia, un concepto enfocado en el cuidado integral y la salud del movimiento.</p>
@@ -61,7 +68,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <h4>Leire Aristi Podología</h4>
+                <h4>Nigan Podología</h4>
             </div>
             <div class="footer-col">
                 <h4>Ubicación</h4>

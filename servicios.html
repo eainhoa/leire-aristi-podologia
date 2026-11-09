@@ -13,23 +13,30 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Nigan <span>| Podología</span></a>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
-            <nav>
-                <ul id="nav-list">
-                    <li><a href="sobre-mi.html">Sobre mí</a></li>
-                    <li><a href="servicios.html" class="active">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li class="lang-selector">
-                        <span class="active-lang">ES</span>
-                        <span class="lang-divider">|</span>
-                        <a href="eu/zerbitzuak.html">EUS</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+       <div class="nav-container">
+           <a href="index.html" class="logo">Nigan <span>| Podología</span></a>
+          
+           <!-- Enlaces principales del menú (solo estos se ocultarán/mostrarán con la hamburguesa) -->
+           <nav>
+               <ul id="nav-list">
+                   <li><a href="sobre-mi.html">Sobre mí</a></li>
+                   <li><a href="servicios.html">Servicios</a></li>
+                   <li><a href="contacto.html">Contacto</a></li>
+               </ul>
+           </nav>
+
+           <!-- Controles derechos para móvil (idioma + hamburguesa siempre visibles fuera) -->
+           <div class="mobile-right-controls">
+               <div class="lang-selector">
+                   <span class="active-lang">ES</span>
+                   <span class="lang-divider">|</span>
+                   <a href="eu/zerbitzuak.html">EUS</a>
+               </div>
+               
+               <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
+           </div>
+       </div>
+   </header>
 
     <section class="page-header">
         <h1>Servicios Podológicos</h1>
@@ -191,12 +198,7 @@
         <article class="service-block" id="infiltraciones">
             <h2>Infiltraciones</h2>
             <p>Es una técnica que permite administrar un medicamento directamente en la zona que presenta dolor o inflamación, buscando conseguir un efecto localizado y mejorar las molestias. Puede ir combinado con otros tratamientos en determinadas patologías del pie.</p>
-            <p>Terapia localizada para reducir la inflamación y aliviar el dolor en patologías articulares o musculares del pie.</p>
-            <ul class="service-list">
-                <li>Alivio del dolor en fascitis plantar y espolón.</li>
-                <li>Tratamiento de neuroma de Morton y bursitis.</li>
-                <li>Procedimiento rápido en consulta.</li>
-            </ul>
+            <p>Terapia localizada para reducir la inflamación y aliviar el dolor en patologías articulares neuropáticas o musculares del pie.</p>
         </article>
 
         <!-- Cirugía podológica -->
@@ -214,7 +216,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <h4>Leire Aristi Podología</h4>
+                <h4>Nigan Podología</h4>
             </div>
             <div class="footer-col">
                 <h4>Ubicación</h4>

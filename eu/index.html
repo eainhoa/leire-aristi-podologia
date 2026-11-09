@@ -13,23 +13,30 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Nigan <span>| Podologia</span></a>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Nabigazioa">☰</button>
-            <nav>
-                <ul id="nav-list">
-                    <li><a href="niri-buruz.html">Niri buruz</a></li>
-                    <li><a href="zerbitzuak.html">Zerbitzuak</a></li>
-                    <li><a href="kontaktua.html">Kontaktua</a></li>
-                    <li class="lang-selector">
-                        <a href="../index.html">ES</a>
-                        <span class="lang-divider">|</span>
-                        <span class="active-lang">EUS</span>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+      <div class="nav-container">
+          <a href="index.html" class="logo">Nigan <span>| Podologia</span></a>
+        
+          <!-- Enlaces principales del menú en euskera -->
+          <nav>
+              <ul id="nav-list">
+                  <li><a href="niri-buruz.html">Niri buruz</a></li>
+                  <li><a href="zerbitzuak.html">Zerbitzuak</a></li>
+                  <li><a href="kontaktua.html">Kontaktua</a></li>
+              </ul>
+          </nav>
+
+          <!-- Controles derechos (idioma ES/EUS activo + hamburguesa) -->
+          <div class="mobile-right-controls">
+              <div class="lang-selector">
+                  <a href="../index.html">ES</a>
+                  <span class="lang-divider">|</span>
+                  <span class="active-lang">EUS</span>
+              </div>
+              
+              <button class="menu-toggle" id="mobile-menu" aria-label="Nabigazioa">☰</button>
+          </div>
+      </div>
+  </header>
 
     <section class="hero">
         <div class="hero-text">
@@ -39,7 +46,7 @@
             <div class="booking-card">
                 <div class="booking-card-label">Hitzorduak erreserbatzeko</div>
                 <p>Eskatu zure kontsulta WhatsApp bidez, deituz edo mezu bat bidaliz:</p>
-                <div class="phone-number">628 123 531</div>
+                <a href="tel:628123531" class="phone-number">628 123 531</a>
             </div>
 
             <div class="hero-buttons">
@@ -152,7 +159,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <h4>Leire Aristi Podologia</h4>
+                <h4>Nigan Podologia</h4>
             </div>
             <div class="footer-col">
                 <h4>Kokapena</h4>

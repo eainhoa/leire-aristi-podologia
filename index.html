@@ -13,23 +13,30 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Nigan <span>| Podología</span></a>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
-            <nav>
-                <ul id="nav-list">
-                    <li><a href="sobre-mi.html">Sobre mí</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li class="lang-selector">
-                        <span class="active-lang">ES</span>
-                        <span class="lang-divider">|</span>
-                        <a href="eu/index.html">EUS</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+       <div class="nav-container">
+           <a href="index.html" class="logo">Nigan <span>| Podología</span></a>
+          
+           <!-- Enlaces principales del menú (solo estos se ocultarán/mostrarán con la hamburguesa) -->
+           <nav>
+               <ul id="nav-list">
+                   <li><a href="sobre-mi.html">Sobre mí</a></li>
+                   <li><a href="servicios.html">Servicios</a></li>
+                   <li><a href="contacto.html">Contacto</a></li>
+               </ul>
+           </nav>
+
+           <!-- Controles derechos para móvil (idioma + hamburguesa siempre visibles fuera) -->
+           <div class="mobile-right-controls">
+               <div class="lang-selector">
+                   <span class="active-lang">ES</span>
+                   <span class="lang-divider">|</span>
+                   <a href="eu/index.html">EUS</a>
+               </div>
+               
+               <button class="menu-toggle" id="mobile-menu" aria-label="Navegación">☰</button>
+           </div>
+       </div>
+   </header>
 
     <section class="hero">
         <div class="hero-text">
@@ -39,7 +46,7 @@
             <div class="booking-card">
                 <div class="booking-card-label">Reserva de citas</div>
                 <p>Solicita tu consulta llamando o enviando un mensaje por WhatsApp:</p>
-                <div class="phone-number">628 123 531</div>
+                <a href="tel:628123531" class="phone-number">628 123 531</a>
             </div>
 
             <div class="hero-buttons">
@@ -152,7 +159,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <h4>Leire Aristi Podología</h4>
+                <h4>Nigan Podología</h4>
             </div>
             <div class="footer-col">
                 <h4>Ubicación</h4>
