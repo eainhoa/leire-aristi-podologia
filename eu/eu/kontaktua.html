@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktua | Leire Aristi Podologia</title>
+    <!-- Google Fonts -->
+    <link rel="icon" type="image/png" href="../img/logotipo.png">
+    <link rel="apple-touch-icon" href="../img/logotipo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <header>
+      <div class="nav-container">
+          <a href="index.html" class="logo">Nigan <span>| Podologia</span></a>
+        
+          <!-- Enlaces principales del menú en euskera -->
+          <nav>
+              <ul id="nav-list">
+                  <li><a href="niri-buruz.html">Niri buruz</a></li>
+                  <li><a href="zerbitzuak.html">Zerbitzuak</a></li>
+                  <li><a href="kontaktua.html">Kontaktua</a></li>
+              </ul>
+          </nav>
+
+          <!-- Controles derechos (idioma ES/EUS activo + hamburguesa) -->
+          <div class="mobile-right-controls">
+              <div class="lang-selector">
+                  <a href="../contacto.html">ES</a>
+                  <span class="lang-divider">|</span>
+                  <span class="active-lang">EUS</span>
+              </div>
+              
+              <button class="menu-toggle" id="mobile-menu" aria-label="Nabigazioa">☰</button>
+          </div>
+      </div>
+  </header>
+
+    <section class="page-header">
+        <h1>Kontaktua eta hitzordua</h1>
+        <p>Zarauzko kontsultan arreta podologiko pertsonalizatua.</p>
+    </section>
+
+    <section class="contact-container">
+       
+        <div class="contact-card">
+            <h2>Hitzordua edo kontsultak eskatzeko</h2>
+
+            <div class="info-item">
+                <h3>Telefonoa eta WhatsAppa</h3>
+                <p><a href="tel:+34628123531">628 123 531</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>Posta elektronikoa</h3>
+                <p><a href="mailto:leireaepodologia@gmail.com">leireaepodologia@gmail.com</a></p>
+            </div>
+
+            <div class="notice-box">
+                <p><strong>Banakako arreta:</strong> asistentzia-kalitate onena eskaintzeko, kontsultak aurrez hitzordua eskatuta egiten dira, aurrez aurre, telefonoz edo WhatsApp bidez.</p>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>Kontsultaren kokapena</h2>
+
+            <div class="info-item">
+                <h3>Arreta Zentroa</h3>
+                <p>Nigan</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Helbidea</h3>
+                <p>Altzola kalea 5<br>20800 Zarautz, Gipuzkoa</p>
+            </div>
+
+            <div class="notice-box">
+                <p>Podologiako kontsulta Nigan zentroko instalazioetan integratuta dago.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.6231922097063!2d-2.1751167!3d43.2803875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b1448b3b75ab%3A0xb35a09e0a0b6ffdb!2sAltzola%20Kalea%2C%205%2C%2020800%20Zarautz%2C%20Gipuzkoa!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Nigan Podologia</h4>
+            </div>
+            <div class="footer-col">
+                <h4>Kokapena</h4>
+                <p>Nigan Fisioterapia Gunea<br>Altzola kalea 5<br>20800 Zarautz, Gipuzkoa</p>
+            </div>
+            <div class="footer-col">
+                <h4>Kontaktua</h4>
+                <p>Telefonoa eta WhatsAppa:<br>628 123 531<br>leireaepodologia@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nigan Podologia. Eskubide guztiak erreserbatuta.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', () => {
+            document.getElementById('nav-list').classList.toggle('nav-active');
+        });
+    </script>
+
+</body>
+</html>
